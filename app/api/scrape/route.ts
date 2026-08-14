@@ -130,7 +130,9 @@ async function fetchWithRedirectChecks(initialUrl: URL, scopeOrigin?: string): P
 
       let response: Response;
       try {
-        response = await fetch(currentUrl, {
+        // Cloudflare Workers expects a string or Request here. Node also accepts
+        // URL objects, which hid this incompatibility during local testing.
+        response = await fetch(currentUrl.toString(), {
           redirect: "manual",
           signal: controller.signal,
           headers: {

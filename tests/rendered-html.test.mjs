@@ -69,7 +69,8 @@ test("crawls at most 10 same-site pages to depth 2 with bounded concurrency, del
   ]);
 
   await withMockedFetch(async (input) => {
-    const target = input instanceof URL ? input : new URL(typeof input === "string" ? input : input.url);
+    assert.equal(typeof input, "string", "hosted runtimes must receive a URL string");
+    const target = new URL(input);
     requestedPaths.push(target.pathname);
     counts.set(target.pathname, (counts.get(target.pathname) ?? 0) + 1);
     if (!firstSeen.has(target.pathname) && !/^\/redirect-[1-5]$/.test(target.pathname)) {
