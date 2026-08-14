@@ -10,21 +10,21 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(origin),
-    title: { default: "Scrapoo — Simple Web Scraper", template: "%s · Scrapoo" },
-    description: "Paste a public webpage URL and get clean, downloadable page data.",
+    title: { default: "Scrapoo — 10-Page Website Scraper", template: "%s · Scrapoo" },
+    description: "Paste a website URL and get clean, downloadable data from up to 10 same-site pages.",
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
     openGraph: {
-      title: "Scrapoo — Simple Web Scraper",
-      description: "Paste a URL. Get the page data.",
+      title: "Scrapoo — 10-Page Website Scraper",
+      description: "Paste a URL. Scrape up to 10 pages.",
       url: origin,
       siteName: "Scrapoo",
-      images: [{ url: `${origin}/og.png`, width: 1536, height: 1024, alt: "Scrapoo simple web scraper" }],
+      images: [{ url: `${origin}/og.png`, width: 1536, height: 1024, alt: "Scrapoo website scraper" }],
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Scrapoo — Simple Web Scraper",
-      description: "Paste a URL. Get the page data.",
+      title: "Scrapoo — 10-Page Website Scraper",
+      description: "Paste a URL. Scrape up to 10 pages.",
       images: [`${origin}/og.png`],
     },
   };
