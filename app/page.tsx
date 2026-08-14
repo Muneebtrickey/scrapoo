@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { ScrapooDashboard } from "./scrapoo-dashboard";
+import { Scraper } from "./scraper";
 
 export const metadata: Metadata = {
-  title: "Crawl control",
-  description: "Monitor resilient crawls, extraction health, and spend from one control plane.",
+  title: "Scrape a webpage",
+  description: "Paste a public webpage URL and extract its title, headings, links, and readable text.",
 };
 
 export default function Home() {
-  return <ScrapooDashboard />;
+  return <Scraper />;
 }
